@@ -1,8 +1,11 @@
 import React from 'react'
+import "../style/Wrapper.css"
 
-const Wrapper = () => {
+const Wrapper = ({children}) => {
   return (
-    <div><h1>Wrapper is work</h1></div>
+    <div className='wrapper'>
+      {children}
+    </div>
   )
 }
 
