@@ -32,7 +32,9 @@ const App = ()=>{
         {
            btnValues.flat().map((btn,i)=>{
             return (
-              <Button
+              //edit the Button component so it can detect different button types and 
+              //execute the assigned function once the specific button is pressed
+              <Button 
                 key={i}
                 className = {btn==="=" ? "equal" : ""}
                 value = {btn}
