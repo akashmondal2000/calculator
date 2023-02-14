@@ -89,7 +89,8 @@ const App = ()=>{
     }
   };
 
-  //invertClickHandler function  first checks if there’s any entered value (num) or 
+  //invertClickHandler function 
+  // first checks if there’s any entered value (num) or 
   //calculated value (res) and then inverts them by multiplying with -1:
   const invertClickHandler = ()=>{
     setCalc({
@@ -97,6 +98,24 @@ const App = ()=>{
       num: calc.num ? calc.num*-1 : 0,
       res: calc.res ? calc.res*-1 :0,
       sign: "",
+    });
+  };
+
+
+  //percentClickHandler function 
+  //checks if there’s any entered value (num) or calculated value
+  // (res) and then calculates the percentage using the built-in Math.pow function, which 
+  //returns the base to the exponent power:
+
+  const percentClickHandler = ()=>{
+    let num = calc.num ? parseFloat(calc.num):0;
+    let res = calc.res ? parseFloat(calc.res):0;
+
+    setCalc({
+      ...calc,
+      num:(num /= Math.pow(100,1)),
+      res:(res /= Math.pow(100,1)),
+      sign:"",
     });
   };
 
