@@ -23,6 +23,8 @@ const App = ()=>{
 
   });
 
+  //numClickHandler Function
+
   const numClickHandler = (e)=>{
     e.preventDefault();
 
@@ -41,6 +43,18 @@ const App = ()=>{
       });
     }
   };
+
+  //commaClickHandler function
+  const commaClickHandler = (e)=>{
+    e.preventDefault();
+    const value = e.target.innerHTML;
+
+    setCalc({
+      ...calc,
+      num:!calc.num.toString().includes(".") ? calc.num + value : calc.num, 
+    })
+  }
+
 
 
 
