@@ -22,6 +22,28 @@ const App = ()=>{
     res: 0 ,//the calculated value.
 
   });
+
+  const numClickHandler = (e)=>{
+    e.preventDefault();
+
+    const value = e.target.innerHTML;
+
+    if(calc.num.length < 16){
+      setCalc({
+        ...calc,
+      num:
+        calc.num === 0 && value === "0" 
+        ? "0"
+        :calc.num % 1 === 0
+        ? Number(calc.num+value)
+        :calc.num+value,
+        res: !calc.sign? 0: calc.res,
+      });
+    }
+  };
+
+
+
   return (
     <div className="App">
     <h1>Hii i'm akash.webDev</h1>
