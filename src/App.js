@@ -54,6 +54,19 @@ const App = ()=>{
       num:!calc.num.toString().includes(".") ? calc.num + value : calc.num, 
     })
   }
+  
+  //signClickHandler function
+  const signClickHandler = (e)=>{
+    e.preventDefault();
+    const value = e.target.innerHTML;
+
+    setCalc({
+      ...calc,
+      sign:value,
+      res: !calc.res && calc.num? calc.num : calc.res,
+      num : 0,
+    });
+  };
 
 
 
