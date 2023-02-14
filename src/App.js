@@ -89,6 +89,17 @@ const App = ()=>{
     }
   };
 
+  //invertClickHandler function  first checks if there’s any entered value (num) or 
+  //calculated value (res) and then inverts them by multiplying with -1:
+  const invertClickHandler = ()=>{
+    setCalc({
+      ...calc,
+      num: calc.num ? calc.num*-1 : 0,
+      res: calc.res ? calc.res*-1 :0,
+      sign: "",
+    });
+  };
+
 
 
 
